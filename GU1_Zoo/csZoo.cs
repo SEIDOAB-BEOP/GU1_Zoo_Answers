@@ -29,18 +29,18 @@ namespace GU1_Zoo
         }
         public csZoo()
         {
-            Name = "Referce Zoo";
+            Name = "Reference Zoo";
             var rnd = new csSeedGenerator();
-            foreach (enAnimalKind kind in typeof(enAnimalKind).GetEnumValues())
+            var kinds = typeof(enAnimalKind).GetEnumValues();
+            foreach (enAnimalKind kind in kinds)
             {
-                foreach (enAnimalMood mood in typeof(enAnimalMood).GetEnumValues())
+                var moods = typeof(enAnimalMood).GetEnumValues();
+                foreach (enAnimalMood mood in moods)
                 {
                     ListOfAnimal.Add(new csAnimal(rnd) { Kind = kind, Mood = mood });
                 }
             }
-
         }
     }
-
 }
 
